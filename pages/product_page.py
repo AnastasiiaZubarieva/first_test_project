@@ -26,7 +26,7 @@ class ProductPage(BasePage):
             print(f'Your code: {alert_text}')
             alert.accept()
         except NoAlertPresentException:
-            print("No second alert presented")
+            print('No second alert presented')
 
     def check_basket_message_title(self):
         title_in_basket_message = self.browser.find_element(*ProductPageLocators.TITLE_PRODUCT_IN_BASKET_MESSAGE).text
@@ -39,10 +39,10 @@ class ProductPage(BasePage):
         assert basket_price == product_price, 'Price in massage and product price not match'
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCES_MESSAGE), "Success message is presented, but should not be"
+        assert self.is_not_element_present(*ProductPageLocators.SUCCES_MESSAGE), 'Success message is presented, but should not be'
 
     def should_message_is_disappeared(self):
-        assert self.is_disappeared(*ProductPageLocators.SUCCES_MESSAGE), "Success message is not disappeared, but should be"
+        assert self.is_disappeared(*ProductPageLocators.SUCCES_MESSAGE), 'Success message is not disappeared, but should be'
 
 
 

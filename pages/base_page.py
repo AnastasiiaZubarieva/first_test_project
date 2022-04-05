@@ -7,7 +7,7 @@ class BasePage():
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
-        #self.browser.implicitly_wait(timeout)
+        self.browser.implicitly_wait(timeout)
 
     def go_to_basket_page(self):
         link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
@@ -43,7 +43,7 @@ class BasePage():
         self.browser.get(self.url)
 
     def should_be_login_link(self):
-        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not presented"
+        assert self.is_element_present(*BasePageLocators.LOGIN_LINK), 'Login link is not presented'
 
     def should_be_authorized_user(self):
-        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented, probably unauthorised user"
+        assert self.is_element_present(*BasePageLocators.USER_ICON), 'User icon is not presented, probably unauthorised user'
