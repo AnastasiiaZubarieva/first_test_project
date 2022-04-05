@@ -3,6 +3,7 @@ from .locators import ProductPageLocators
 from math import log, sin
 from selenium.common.exceptions import NoAlertPresentException
 
+
 class ProductPage(BasePage):
     def action_on_product_page(self):
         self.click_on_button_add_to_basket()
@@ -39,10 +40,9 @@ class ProductPage(BasePage):
         assert basket_price == product_price, 'Price in massage and product price not match'
 
     def should_not_be_success_message(self):
-        assert self.is_not_element_present(*ProductPageLocators.SUCCES_MESSAGE), 'Success message is presented, but should not be'
+        assert self.is_not_element_present(
+            *ProductPageLocators.SUCCES_MESSAGE), 'Success message is presented, but should not be'
 
     def should_message_is_disappeared(self):
-        assert self.is_disappeared(*ProductPageLocators.SUCCES_MESSAGE), 'Success message is not disappeared, but should be'
-
-
-
+        assert self.is_disappeared(
+            *ProductPageLocators.SUCCES_MESSAGE), 'Success message is not disappeared, but should be'
